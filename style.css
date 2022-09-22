@@ -9,9 +9,9 @@
     font-family:'Nunito',sans-serif;
     font-weight: 400;
 }
-/*In acest proiect vom folosi vh ca unitate de masura
-In mod normal un vh=16px asa ca prin modificarea generala a font-size a intregului document
-acum un vh=10px */
+/*In acest proiect vom folosi rem ca unitate de masura
+In mod normal un rem=16px asa ca prin modificarea generala a font-size a intregului document
+acum un rem=10px */
 html{
     font-size:62.5%;
 }
@@ -24,13 +24,119 @@ html{
     letter-spacing:0.5rem;
     text-shadow: .3rem .3rem .3rem black;
 }
-/*End of Common Styles
+/*End of Common Styles */
+
+
+/*NavBar */
+
+.navbar{
+  width:100%;
+  height: 14rem;
+  background-color: #000;
+  position:fixed;
+  top:-14rem;
+  z-index: 100;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow:.2rem .2rem .2rem #000;
+  transition:top .4s;
+}
+
+.navbar.change{
+  top:0;
+  transition: top .4s .2s;
+}
+.navbar-link{
+  color:#aaa;
+  margin:0 4rem;
+  /*pentru a pune elemnetele span sub i folosim flex si directia column 
+  mai e uitil sa le si avem in mijloc deci si justify si align */
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  transition:color .3s, opacity 0.2s;
+  opacity:0;
+
+}
+/* pentru a face fiecare icon sa apara pe rand o sa le targetam individual
+pentru a le da un delay la tranzitie din ce in ce mai mare
+de asemenea le facem o oscilatie de opacitate de la 0 intial la 1 cand apare clasa change */
+.change .navbar-link{
+  opacity:1;
+}
+
+.change .navbar-link:nth-child(1){
+  transition:opacity .4s .5s,color .3s;
+}
+.change .navbar-link:nth-child(2){
+  transition:opacity .4s .6s, color .3s;
+}
+.change .navbar-link:nth-child(3){
+  transition:opacity .4s .7s, color .3s;
+}
+.change .navbar-link:nth-child(4){
+  transition:opacity .4s .8s, color .3s;
+}
+.change .navbar-link:nth-child(5){
+  transition:opacity .4s .9s, color .3s;
+}
+
+.navbar-link:hover{
+  color:#fff;
+}
+
+.navbar-link i{
+  font-size:7rem;
+}
+
+.navbar-link span{
+  font-size:2.5rem;
+  font-weight: 900;
+  letter-spacing: .4rem;
+  margin-top:.4rem
+
+}
+
+.menu{
+  width:4rem;
+  height: 6rem;
+  background-color: #000;
+  position:fixed;
+  top:1rem;
+  left:5rem;
+  border-radius: 30rem 30rem 15rem 15rem;
+  box-shadow: .1rem .1rem .1rem #000, -.1rem -.1rem #000;
+  cursor: pointer;
+  transition:top 0.4s 0.2s;
+  z-index:100;
+
+}
+
+.menu.change{
+  top:15rem;
+  transition:top .4s;
+}
+
+.menu::before{
+  content:"";
+  width:.3rem;
+  height: 15rem;
+  background-color: #000;
+  position:absolute;
+  top:-15rem;
+  left:1.8rem;
+  box-shadow: .1rem 0 .1rem #000;
+}
+
+/*End of navBar */
 
 /*Section1 */
 
 .section-1{
     width: 100%;
-    height: 100vh; /*chestia de care zicem vh */
+    height: 100vh; /*view-height */
     background-color: #333;
     display:flex; /*cauta despre proprietatea flex */
     flex-direction: column;
@@ -268,3 +374,191 @@ html{
  }
 
  /*End of section 3 */
+
+ /*Section 4 */
+
+ .section-4{
+  width:100%;
+  height: 15vw;
+  background-color:#222;
+  display:flex;
+  justify-content: space-around;
+  align-items:flex-start; /*prin aceasta prorpietatae elementele vor ajunge in partea de sus a containerului */
+  padding:3rem 0;
+  position:relative
+ }
+ 
+ .section-4-text{
+  transform: uppercase;
+
+ }
+ 
+ .section-4-heading{
+  font-size:4rem;
+  font-weight: 900;
+  color:burlywood;
+ }
+
+ .section-4-pharaghraph{
+    font-size:1.5rem;
+    color:#888;
+ }
+
+ .signup-form{
+  display:flex;
+  align-items:center;
+ }
+
+ .signup-form-input{
+  width:35rem;
+  height:5rem;
+  padding:1rem;
+  border:0.2rem solid burlywood;
+  font-size:1.6rem;
+  letter-spacing:.1rem;
+  font-weight: 700;
+  color:burlywood;
+ }
+ .signup-form-input::placeholder{
+    color:burlywood;
+ }
+
+ .signup-btn{
+  position:relative;
+  left:-4.5rem;
+  width:4rem;
+  height: 4rem;
+  background-color: #333;
+  color:burlywood;
+  border:none;
+  cursor: pointer;
+  font-size: 3rem;
+
+ }
+
+ .copyright{
+  position:absolute;
+  bottom: 3rem;
+  font-size: 1.7rem;
+  font-weight:200 ;
+  color:#eee;
+  letter-spacing: .1rem;
+  border-top: .1rem solid #888;
+  padding-top: 6rem;
+  width:100%;
+  text-align:center;
+ }
+
+ /*End of section 4 */
+
+ /*Responsive 
+ 
+ In aceasta parte vom adapta documentul folosind  css media quary
+ pentru difeite tipuri de ecrane si dimensiuni*/
+
+ @media(max-width:1400px){
+  html{
+    font-size: 50%;
+  }
+
+  .section-2{
+  height: auto;
+  padding:10ren 0 12rem 0;
+  }
+  .cards-container{
+    margin-top:10rem;
+  }
+
+  .gallery-link{
+    width:40rem;
+    height: 25rem;
+    margin:4rem;
+  }
+
+  .food-img{
+    width:100%;
+    height: 100%;
+  }
+
+}
+
+@media(max-width:1000px){
+  .section-heading{
+    font-size:9rem;
+    margin:0 5rem;
+  }
+
+
+.section-1-icons{
+  font-size:25rem;
+}
+
+.cards-container{
+  flex-wrap:wrap;
+
+}
+.card{
+  margin:5rem;
+
+}
+
+.section-4{
+  height: 30rem;;
+}
+
+}
+
+@media(max-width:900px){
+  .nav-link{
+    margin:2rem;
+  }
+
+  .navbar-link i{
+    font-size:4rem;
+  }
+
+  .navbar-link span{
+    font-size:2rem;
+  }
+}
+
+
+@media(max-width:700px){
+  .section-heading{
+    font-size:7rem;
+    margin:0 10rem;
+  }
+
+  .section-1-icons i{
+    font-size:20rem;
+  }
+  .menu{
+    left:2rem;
+  }
+  .section-4{
+    height: 40rem;
+    flex-direction:column;
+    justify-content: flex-start;
+    align-items: center;
+
+  }
+  .section-4-text{
+    margin-bottom: 5rem;
+
+  }
+
+}
+
+
+
+@media(max-width:550px){
+  html{
+    font-size:40%;
+  }
+
+  .navbar-link{
+    margin:0 0.7rem;
+  }
+
+}
+ /*end of Responsive */

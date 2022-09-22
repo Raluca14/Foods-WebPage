@@ -1,3 +1,12 @@
+document.querySelector(".menu").addEventListener("click", ()=>{
+    document.querySelectorAll(".target").forEach((item)=>{
+        item.classList.toggle("change");
+    } )
+})
+
+
+
+
 
 //prima data o sa obtiunem un vector de elemente, adica icons, acesta tine
 //toate elementele de care au class .section-1-icons si sunt de variabila i
@@ -28,4 +37,4 @@ setInterval(() => {
 
 
 
-},3000) // 4 secunde
+},3000) // 3 secunde
