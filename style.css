@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap');
 /*Common Styles */
-*{ /* Asta inseamna ca aceste reguli se aplica la toate elemente din site */
+*{
     margin:0;
     padding:0;
     box-sizing:border-box;
@@ -16,11 +16,11 @@ html{
     font-size:62.5%;
 }
 .section-heading{
-    font-size:12rem; /*aparent asta este ceea ce zicea el */
+    font-size:12rem; 
     font-weight: 900;
     color:white;
     text-align: center;
-    text-transform: capitalize; /*a se cerceta si asta */
+    text-transform: capitalize; 
     letter-spacing:0.5rem;
     text-shadow: .3rem .3rem .3rem black;
 }
@@ -50,8 +50,6 @@ html{
 .navbar-link{
   color:#aaa;
   margin:0 4rem;
-  /*pentru a pune elemnetele span sub i folosim flex si directia column 
-  mai e uitil sa le si avem in mijloc deci si justify si align */
   display: flex;
   flex-direction:column;
   justify-content: center;
@@ -60,9 +58,7 @@ html{
   opacity:0;
 
 }
-/* pentru a face fiecare icon sa apara pe rand o sa le targetam individual
-pentru a le da un delay la tranzitie din ce in ce mai mare
-de asemenea le facem o oscilatie de opacitate de la 0 intial la 1 cand apare clasa change */
+
 .change .navbar-link{
   opacity:1;
 }
@@ -138,10 +134,10 @@ de asemenea le facem o oscilatie de opacitate de la 0 intial la 1 cand apare cla
     width: 100%;
     height: 100vh; /*view-height */
     background-color: #333;
-    display:flex; /*cauta despre proprietatea flex */
+    display:flex; 
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly; /*good to know */
+    justify-content: space-evenly; 
 }
 
 
@@ -153,13 +149,13 @@ de asemenea le facem o oscilatie de opacitate de la 0 intial la 1 cand apare cla
    
     position:absolute;
     
-     transform:translate(-50%,-50%) scale(0);/*ne permite sa mutam obiectele in functie de axat xyz */
+     transform:translate(-50%,-50%) scale(0);
     
 }
 
 .section-1-icons i.change{
     transform:translate(-50%,-50%) scale(1);
-    transition:transform .3s; /* niste tranzitie adusa aici pentru efect, va face disparitia prin scale din js mai smooth */
+    transition:transform .3s;
 }
 
 
@@ -168,7 +164,7 @@ de asemenea le facem o oscilatie de opacitate de la 0 intial la 1 cand apare cla
     width: 100%;
     height: 100vh;
     background-color: #222;
-    display: flex; /*aseaza elemetele una langa alta */
+    display: flex; 
     flex-direction: column;
     justify-content: space-between;
     padding: 10rem 0rem;
@@ -227,7 +223,7 @@ de asemenea le facem o oscilatie de opacitate de la 0 intial la 1 cand apare cla
     box-shadow: -.1rem -.1rem -.1rem black;
 }
 .card-img{
-    width: 100%; /* va lua 100% din containerul parinte care e card */
+    width: 100%;
 }
 
 .card-name{
@@ -337,7 +333,7 @@ de asemenea le facem o oscilatie de opacitate de la 0 intial la 1 cand apare cla
  .food-img{
     width: 24vw;
     height: 15vw;
-    object-fit:cover; /*face ca imaginile sa nu-si piarda calitatea */
+    object-fit:cover; 
     box-shadow: .3rem .3rem .1rem #e92929, .5rem .5rem .1rem #a2e946, .9rem .9rem .1rem #e92999;
     transition: all .5s;
  }
@@ -383,7 +379,7 @@ de asemenea le facem o oscilatie de opacitate de la 0 intial la 1 cand apare cla
   background-color:#222;
   display:flex;
   justify-content: space-around;
-  align-items:flex-start; /*prin aceasta prorpietatae elementele vor ajunge in partea de sus a containerului */
+  align-items:flex-start;
   padding:3rem 0;
   position:relative
  }
@@ -454,7 +450,7 @@ de asemenea le facem o oscilatie de opacitate de la 0 intial la 1 cand apare cla
  /*Responsive 
  
  In aceasta parte vom adapta documentul folosind  css media quary
- pentru difeite tipuri de ecrane si dimensiuni*/
+ pentru diferite tipuri de ecrane si dimensiuni*/
 
  @media(max-width:1400px){
   html{
